@@ -14,3 +14,52 @@ html, body{
     filter: blur(5px);
     display: flex;
 }
+
+div{
+    background-size: cover;
+    background-position: center;
+}
+
+.shadowBone{
+    background-image: url(./images/shadow-and-bone.jpeg);
+}
+
+.nightAgent{
+    background-image: url(./images/the-night-agent.jpeg);
+}
+
+.witcher{
+    background-image: url(./images/the-witcher.jpeg);
+}
+
+.peakyBlinders{
+    background-image: url(./images/peaky-blinders.jpeg);
+}
+
+.ready{
+    background-image: url(./images/ready-player-one.jpeg);
+}
+
+.money{
+    background-image: url(./images/money-heist.jpeg);
+}
+
+.ash{
+    background-image: url(./images/ash-vs-evil-dead.jpeg);
+}
+
+.red{
+    background-image: url(./images/red-notice.jpeg);
+}
+
+.extraction{
+    background-image: url(./images/extraction.jpeg);
+}
+
+.adam{
+    background-image: url(./images/the-adam-project.jpeg);
+}
+
+.guard{
+    background-image: url(./images/the-old-guard.jpeg);
+}
