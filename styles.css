@@ -521,17 +521,297 @@ video {
   --tw-contain-style: ;
 }
 
+.inline {
+  display: inline;
+}
+
+.flex {
+  display: flex;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.grow-\[2\] {
+  flex-grow: 2;
+}
+
+.columns-4 {
+  -moz-columns: 4;
+  columns: 4;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.bg-stone-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 37 36/var(--tw-bg-opacity));
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-9 {
+  padding: 2.25rem;
+}
+
+.text-slate-100 {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249/var(--tw-text-opacity));
+}
+
 html, body {
   width: 100%;
   height: 100%;
+  color: rgb(241, 245, 249);
 }
 
 .customContainer {
   width: 100%;
   height: 100%;
-  background-image: url(./images/background-option-2.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./images/background-option-2.jpeg);
   background-size: cover;
   background-position: center;
-  filter: blur(5px);
+  padding: 5% 5% 5% 4%;
+}
+
+.iconNav {
+  background-color: rgba(68, 64, 60, 0.9);
+  align-self: center;
+  height: 250px;
+  margin: 20px;
+  padding: 8px;
+  border-radius: 25px;
+  padding: 10px;
+}
+.iconNav ul {
+  font-size: 25px;
+}
+
+.main {
+  background-color: rgba(68, 64, 60, 0.9);
+  border-radius: 25px;
+  padding: 1%;
+}
+
+.content {
+  flex-grow: 9;
+  justify-content: space-between;
+  align-content: space-between;
+  border-left: 1px solid white;
+}
+
+.sideNav {
+  flex-grow: 1;
+  border-radius: 25px;
+  padding: 10px;
+}
+.sideNav ul {
+  gap: 20px;
+}
+.sideNav ul i {
+  padding-right: 5%;
+}
+.sideNav .newTrailers {
+  flex-grow: 5;
+  gap: 30px;
   display: flex;
+  justify-content: center;
+}
+.sideNav .newTrailers h2 {
+  flex-grow: 0;
+}
+.sideNav .newTrailers .customCard {
+  flex-grow: 3;
+  flex-basis: 0;
+  display: flex;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.topNav {
+  flex-grow: 0.5;
+  padding: 0px 1%;
+}
+.topNav .search {
+  gap: 10%;
+}
+.topNav .search .searchBar {
+  gap: 10%;
+}
+
+.media {
+  flex-grow: 9;
+  gap: 2%;
+  border-radius: 25px;
+  padding: 10px;
+}
+.media .peakyBlinders {
+  flex-grow: 3;
+  border-radius: 25px;
+  padding: 10px;
+}
+.media .popcornMania {
+  flex-grow: 1;
+  gap: 1%;
+}
+.media .popcornMania .customCard {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  border-radius: 15px;
+  padding: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.media .continueWatching {
+  flex-grow: 1;
+  gap: 1%;
+}
+.media .continueWatching .customCard {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  border-radius: 15px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+div {
+  background-size: cover;
+  background-position: center;
+}
+
+.shadowBone {
+  background-image: url(./images/shadow-and-bone.jpeg);
+  background-position: 50% 10%;
+}
+
+.nightAgent {
+  background-image: url(./images/the-night-agent.jpeg);
+}
+
+.witcher {
+  background-image: url(./images/the-witcher.jpeg);
+  background-position: top;
+}
+
+.peakyBlinders {
+  background-image: url(./images/peaky-blinders.jpeg);
+}
+
+.brooklyn {
+  background-image: url(./images/brooklyn-nine-nine.jpeg);
+}
+
+.ready {
+  background-image: url(./images/ready-player-one.jpeg);
+}
+
+.money {
+  background-image: url(./images/money-heist.jpeg);
+}
+
+.ash {
+  background-image: url(./images/ash-vs-evil-dead.jpeg);
+}
+
+.red {
+  background-image: url(./images/red-notice.jpeg);
+}
+
+.extraction {
+  background-image: url(./images/extraction.jpeg);
+}
+
+.adam {
+  background-image: url(./images/the-adam-project.jpeg);
+}
+
+.guard {
+  background-image: url(./images/the-old-guard.jpeg);
 }/*# sourceMappingURL=styles.css.map */
