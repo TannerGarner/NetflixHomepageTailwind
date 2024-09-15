@@ -2,24 +2,29 @@
 
 //fonts & color
 $background-color: rgba(68, 64, 60, 0.9);
-
+$red: rgb(228, 10, 20);
+$offwhite: rgb(233, 233, 233);
+$bordergray: rgba(77, 81, 76, 0.8);
+$backgroundgray: rgb(116, 116, 116);
 
 //padding & gap
 $paddingxs: 1%;
 $paddingsm: 5%;
 $paddinglg: 10%;
 
+$gapxs: 1%;
 $gapsm: 2%;
 $gapmd: 10%;
 
-@mixin box ($rounded: 25px, $padding: 10px){
+@mixin box ($rounded: 30px, $padding: $paddingxs, $border: 1px solid $bordergray){
     border-radius: $rounded;
+    border: $border;
     padding: $padding;
 }
 
 @mixin row ($grow: 1){
     flex-grow: $grow;
-    gap: 1%;
+    gap: $gapxs;
 }
 
 @mixin rowitem ($grow: 1){
@@ -30,15 +35,18 @@ $gapmd: 10%;
     padding: 10px;
 }
 
-@mixin button (){
+@mixin button ($border: 1px solid $bordergray, $background: $backgroundgray){
     border-radius: 25px;
-    border: 1px solid gray;
+    border: $border;
+    background-color: $background;
+    padding: 10px 20px;
 }
 
 html, body{
     width: 100%;
     height: 100%;
-    color: rgb(241 245 249);
+    font-family: 'Open Sans';
+    color: $offwhite;
 }
 
 .customContainer{
@@ -47,37 +55,38 @@ html, body{
     background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url(./images/background-option-2.jpeg);
     background-size: cover;
     background-position: center;
-    padding: $paddingsm $paddingsm $paddingsm 4%;
+    padding: $paddingsm 3%;
     // display: flex;
 }
 
 .iconNav{
     background-color: $background-color;
     align-self: center;
-    height: 250px;
     margin: 20px;
-    padding: 8px;
-    @include box();
+    @include box($padding: 10px);
     ul{
+        flex-grow: 1;
+        gap: $gapmd;
         font-size: 25px;
     }
 }
 
 .main{
     background-color: $background-color;
-    @include box($padding:$paddingxs);
+    @include box($padding:0);
 }
 
 .content{
     flex-grow: 9;
     justify-content: space-between;
     align-content: space-between;
-    border-left: 1px solid white;    
+    padding: 10px $paddingxs;
+    border-left: 1px solid $bordergray;    
 }
 
 .sideNav{
     flex-grow: 1;
-    @include box();
+    @include box($padding:25px, $border: none);
     ul{
         gap: 20px;
         i{
@@ -105,29 +114,61 @@ html, body{
 
 .topNav{
     flex-grow: 0.5;
-    padding: 0px $paddingxs;
+    padding: 0px 15px;
+    gap: $gapmd;
 
     .search{
+        flex-grow: 1;
         gap: $gapmd;
 
         .searchBar{
             gap: $gapmd;
+            align-items: center;
+            @include button();
+            
+            input{
+                background-color: inherit;
+                width: 100%;
+                padding: 0px 10px;
+            }
+        }
+    }
+
+    .account{
+        flex-grow: 1;
+        justify-content: end;
+        button{
+            @include button();
+        }
+
+        .userInfo{
+            @include button();
         }
     }
 }
 
 .media{
-    flex-grow: 9;
+    flex-grow: 8;
     gap: $gapsm;
-    @include box();
+    @include box($border: none);
 
     .peakyBlinders{
-        flex-grow: 3;
-        @include box()
+        flex-grow: 4;
+        display: flex;
+        align-items: flex-end;
+        gap: $gapxs;
+        @include box($padding: 3% $paddingsm );
+        button{
+            @include button();
+        }
+
+        .watch{
+            @include button($background:$red)
+        }
     }
     
     .popcornMania{
-        @include row();
+        @include row($grow:2);
         
         .customCard{
             @include rowitem();
@@ -157,51 +198,57 @@ div{
 }
 
 .shadowBone{
-    background-image: url(./images/shadow-and-bone.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/shadow-and-bone.jpeg);
     background-position: 50% 10%;
 }
 
 .nightAgent{
-    background-image: url(./images/the-night-agent.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/the-night-agent.jpeg);
 }
 
 .witcher{
-    background-image: url(./images/the-witcher.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/the-witcher.jpeg);
     background-position: top;
 }
 
 .peakyBlinders{
-    background-image: url(./images/peaky-blinders.jpeg);
+    background-image: url(./images/peaky-blinders-3.jpg);
+    background-position: 50% 10%;
 }
 
 .brooklyn{
-    background-image: url(./images/brooklyn-nine-nine.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/brooklyn-nine-nine.jpeg);
 }
 
 .ready{
-    background-image: url(./images/ready-player-one.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/ready-player-one.jpeg);
+    background-position: 50% 40%;
 }
 
 .money{
-    background-image: url(./images/money-heist.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/money-heist.jpeg);
 }
 
 .ash{
-    background-image: url(./images/ash-vs-evil-dead.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/ash-vs-evil-dead.jpeg);
+    background-position: 50% 10%;
 }
 
 .red{
-    background-image: url(./images/red-notice.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/red-notice.jpeg);
 }
 
 .extraction{
-    background-image: url(./images/extraction.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/extraction.jpeg);
+    background-position: 50% 20%;
 }
 
 .adam{
-    background-image: url(./images/the-adam-project.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/the-adam-project.jpeg);
+    background-position: 50% 10%;
 }
 
 .guard{
-    background-image: url(./images/the-old-guard.jpeg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/the-old-guard.jpeg);
+    background-position: 50% 10%;
 }
