@@ -98,6 +98,10 @@ a{
     }
 }
 
+.displayMobile{
+    display: none;
+}
+
 .customContainer{
     width: 100%;
     height: 100%;
@@ -138,6 +142,7 @@ a{
 .sideNav{
     flex-grow: 1;
     @include box($padding:25px, $border: none);
+
     ul{
         padding: $paddingsm;
         gap: 20px;
@@ -471,13 +476,27 @@ div{
         .sideNav{
             flex-direction: row;
             padding: $paddingxs $paddingsm;
-            justify-content: flex-start;
-            align-items: flex-end;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
             h1{
                 flex-grow: 0;
             }
 
-            ul{
+            .displayMobile{
+                display: inherit;
+                font-size: $txtmd;
+                @include button();
+            }
+
+            #navList{
+                flex-direction: row;
+                justify-content: space-evenly;
+                @include box();
+            }
+
+            .toggleDisplay{
                 display: none;
             }
 
