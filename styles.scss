@@ -68,6 +68,11 @@ html, body{
     color: $offwhite;
 }
 
+.customContainer{
+    overflow: hidden; 
+    max-width: 100vw; 
+}
+
 h1{
     font-size: $txtlg;
     font-weight: bolder;
@@ -76,6 +81,10 @@ h1{
 
 h2{
     font-size: $txtmd;
+}
+
+h3{
+    font-size: $txtsm;
 }
 
 h6{
@@ -100,11 +109,13 @@ a{
 }
 
 .iconNav{
+    flex-direction: column;
     background-color: $background-color;
     align-self: center;
     margin: 20px;
     @include box($padding: 10px);
     ul{
+        flex-direction: column;
         flex-grow: 1;
         gap: $gapmd;
         font-size: 25px;
@@ -130,6 +141,9 @@ a{
     ul{
         padding: $paddingsm;
         gap: 20px;
+        a{
+            font-size: $txtsm;
+        }
         i{
           padding-right: $paddingsm ;  
         };
@@ -162,18 +176,23 @@ a{
     gap: $gapmd;
 
     .search{
-        flex-grow: 2;
-        gap: $gapmd;
+        flex-grow: 1;
+        gap: $gapsm;
 
         .searchBar{
             flex-grow: 1;
-            gap: $gapmd;
+            display: flex;
+            gap: $gapsm;
             align-items: center;
             @include button($background: rgba(150, 150, 150, 0.2));
-            
+            form{
+                flex-grow: 1;
+                display: flex;
+            }
             input{
                 background-color: inherit;
-                width: 100%;
+                flex-grow: 1;
+                max-width: 100%;
                 padding: 0px 10px;
             }
         }
@@ -278,7 +297,7 @@ a{
 
         .guard{
             .line{
-                background: linear-gradient(to right, $red 70%, $offwhite 30%);  
+                background: linear-gradient(to right, $red 75%, $offwhite 30%);  
             }
         }
 
@@ -353,6 +372,141 @@ div{
     background-position: 50% 10%;
 }
 
-@media (max-width:1000){
+@media (max-width:1000px){
+    h1{
+        font-size: $txtlg;
+        font-weight: bolder;
+        color: $red;
+    }
+    
+    h2{
+        font-size: $txtmd;
+    }
+    
+    h6{
+        font-size: $txtsm;
+    }
 
+    .topNav{
+        
+        .search{
+            gap: $gapmd;
+        }
+
+        .account{
+            width: 50px;
+        }
+
+        .userName{
+            display: none;
+        }
+    }
+
+    .content {
+        overflow: hidden; 
+        max-width: 100vw; 
+    
+        .media{
+            overflow: hidden; 
+            max-width: 60vw; 
+        
+            .peakyBlinders{
+                overflow: hidden; 
+                max-width: 100vw; 
+            }
+        }
+    }
+
+    .popcornMania {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: $gapxs;  
+        scroll-snap-type: x mandatory;  
+        -webkit-overflow-scrolling: touch;  
+    
+        .customCard {
+          flex: 0 0 auto;  
+          width: 80%;  
+          scroll-snap-align: center;  
+        }
+    }
+
+    .continueWatching{
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: $gapxs;  
+        scroll-snap-type: x mandatory;  
+        -webkit-overflow-scrolling: touch;  
+        .customCard {
+          flex: 0 0 auto;  
+          scroll-snap-align: center;  
+        }
+    }
+}
+
+@media (max-width:800px){
+    .customContainer{
+        flex-direction: column-reverse;
+        padding-bottom: 10px;
+    }
+
+    .iconNav{
+        flex-direction: row;
+
+        ul{
+            flex-direction: row;
+            width: 300px;
+        }
+    }
+
+    .content{
+        border: none;
+    }
+
+    .main{
+        flex-direction: column;
+        
+        .sideNav{
+            flex-direction: row;
+            padding: $paddingxs $paddingsm;
+            justify-content: flex-start;
+            align-items: flex-end;
+            h1{
+                flex-grow: 0;
+            }
+
+            ul{
+                display: none;
+            }
+
+            .newTrailers{
+                display: none;
+            }
+        }        
+
+        .media{
+            overflow: hidden; 
+            max-width: 100vw; 
+        }
+    }
+
+    .topNav{
+        .search{
+            flex-grow: 0;
+        }
+
+        form{
+            display: none;
+            flex-grow: 0;
+            input{
+                display: none;
+                flex-grow: 0;
+            }
+        }
+        .account{
+            flex-grow: 0;
+        }
+    }
 }

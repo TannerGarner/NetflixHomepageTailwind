@@ -557,6 +557,11 @@ html, body {
   color: rgb(233, 233, 233);
 }
 
+.customContainer {
+  overflow: hidden;
+  max-width: 100vw;
+}
+
 h1 {
   font-size: 40px;
   font-weight: bolder;
@@ -565,6 +570,10 @@ h1 {
 
 h2 {
   font-size: 20px;
+}
+
+h3 {
+  font-size: 15px;
 }
 
 h6 {
@@ -586,6 +595,7 @@ a:hover {
 }
 
 .iconNav {
+  flex-direction: column;
   background-color: rgba(68, 64, 60, 0.9);
   align-self: center;
   margin: 20px;
@@ -594,6 +604,7 @@ a:hover {
   padding: 10px;
 }
 .iconNav ul {
+  flex-direction: column;
   flex-grow: 1;
   gap: 10%;
   font-size: 25px;
@@ -623,6 +634,9 @@ a:hover {
 .sideNav ul {
   padding: 5%;
   gap: 20px;
+}
+.sideNav ul a {
+  font-size: 15px;
 }
 .sideNav ul i {
   padding-right: 5%;
@@ -669,12 +683,13 @@ a:hover {
   gap: 10%;
 }
 .topNav .search {
-  flex-grow: 2;
-  gap: 10%;
+  flex-grow: 1;
+  gap: 2%;
 }
 .topNav .search .searchBar {
   flex-grow: 1;
-  gap: 10%;
+  display: flex;
+  gap: 2%;
   align-items: center;
   border-radius: 25px;
   border: 1px solid rgba(77, 81, 76, 0.8);
@@ -686,9 +701,14 @@ a:hover {
   box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
   cursor: pointer;
 }
+.topNav .search .searchBar form {
+  flex-grow: 1;
+  display: flex;
+}
 .topNav .search .searchBar input {
   background-color: inherit;
-  width: 100%;
+  flex-grow: 1;
+  max-width: 100%;
   padding: 0px 10px;
 }
 .topNav .account {
@@ -833,7 +853,7 @@ a:hover {
   background: linear-gradient(to right, rgb(228, 10, 20) 20%, rgb(233, 233, 233) 10%);
 }
 .media .continueWatching .guard .line {
-  background: linear-gradient(to right, rgb(228, 10, 20) 70%, rgb(233, 233, 233) 30%);
+  background: linear-gradient(to right, rgb(228, 10, 20) 75%, rgb(233, 233, 233) 30%);
 }
 .media .continueWatching i {
   border-radius: 25px;
@@ -906,4 +926,116 @@ div {
 .guard {
   background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9)), url(./images/the-old-guard.jpeg);
   background-position: 50% 10%;
+}
+
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(228, 10, 20);
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 15px;
+  }
+  .topNav .search {
+    gap: 10%;
+  }
+  .topNav .account {
+    width: 50px;
+  }
+  .topNav .userName {
+    display: none;
+  }
+  .content {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+  .content .media {
+    overflow: hidden;
+    max-width: 60vw;
+  }
+  .content .media .peakyBlinders {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+  .popcornMania {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .popcornMania .customCard {
+    flex: 0 0 auto;
+    width: 80%;
+    scroll-snap-align: center;
+  }
+  .continueWatching {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .continueWatching .customCard {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+  }
+}
+@media (max-width: 800px) {
+  .customContainer {
+    flex-direction: column-reverse;
+    padding-bottom: 10px;
+  }
+  .iconNav {
+    flex-direction: row;
+  }
+  .iconNav ul {
+    flex-direction: row;
+    width: 300px;
+  }
+  .content {
+    border: none;
+  }
+  .main {
+    flex-direction: column;
+  }
+  .main .sideNav {
+    flex-direction: row;
+    padding: 1% 5%;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  .main .sideNav h1 {
+    flex-grow: 0;
+  }
+  .main .sideNav ul {
+    display: none;
+  }
+  .main .sideNav .newTrailers {
+    display: none;
+  }
+  .main .media {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+  .topNav .search {
+    flex-grow: 0;
+  }
+  .topNav form {
+    display: none;
+    flex-grow: 0;
+  }
+  .topNav form input {
+    display: none;
+    flex-grow: 0;
+  }
+  .topNav .account {
+    flex-grow: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */
