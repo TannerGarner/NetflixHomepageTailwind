@@ -1,11 +1,15 @@
 @use "output";
 
-//fonts & color
+//fonts, text & colors
 $background-color: rgba(68, 64, 60, 0.9);
 $red: rgb(228, 10, 20);
 $offwhite: rgb(233, 233, 233);
 $bordergray: rgba(77, 81, 76, 0.8);
 $backgroundgray: rgb(116, 116, 116);
+$txtxs: 10px;
+$txtsm: 15px;
+$txtmd: 20px;
+$txtlg: 40px;
 
 //padding & gap
 $paddingxs: 1%;
@@ -33,13 +37,28 @@ $gapmd: 10%;
     display: flex;
     border-radius: 15px;
     padding: 10px;
+    transition: 0.1s ease;
+    &:hover{
+        box-shadow: 0px 0px 15px 10px $bordergray;
+        cursor: pointer;
+    }
 }
+
 
 @mixin button ($border: 1px solid $bordergray, $background: $backgroundgray){
     border-radius: 25px;
     border: $border;
     background-color: $background;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    transition: 0.1s ease;
+    &:hover{
+        box-shadow: 0px 0px 15px 10px $bordergray;
+        cursor: pointer;
+    }
+}
+
+.active {
+    color: $red;
 }
 
 html, body{
@@ -47,6 +66,27 @@ html, body{
     height: 100%;
     font-family: 'Open Sans';
     color: $offwhite;
+}
+
+h1{
+    font-size: $txtlg;
+    font-weight: bolder;
+    color: $red;
+}
+
+h2{
+    font-size: $txtmd;
+}
+
+h6{
+    font-size: $txtsm;
+}
+
+a{
+    &:hover{
+        box-shadow: 0px 0px 15px 10px $bordergray;
+        background-color: $bordergray;
+    }
 }
 
 .customContainer{
@@ -88,6 +128,7 @@ html, body{
     flex-grow: 1;
     @include box($padding:25px, $border: none);
     ul{
+        padding: $paddingsm;
         gap: 20px;
         i{
           padding-right: $paddingsm ;  
@@ -108,6 +149,9 @@ html, body{
            display: flex;
            justify-content: space-between;
            align-items: flex-end;
+           i{
+            @include button($border: none, $background: rgba(216, 204, 192, 0.3));
+           }
         }
     }
 }
@@ -118,13 +162,14 @@ html, body{
     gap: $gapmd;
 
     .search{
-        flex-grow: 1;
+        flex-grow: 2;
         gap: $gapmd;
 
         .searchBar{
+            flex-grow: 1;
             gap: $gapmd;
             align-items: center;
-            @include button();
+            @include button($background: rgba(150, 150, 150, 0.2));
             
             input{
                 background-color: inherit;
@@ -137,12 +182,20 @@ html, body{
     .account{
         flex-grow: 1;
         justify-content: end;
+        gap: $gapmd;
         button{
             @include button();
         }
 
         .userInfo{
             @include button();
+            align-items: center;
+            justify-content: center;
+            gap: $gapmd;
+            width: 160px;
+            p{
+                font-size: $txtxs;
+            }
         }
     }
 }
@@ -158,7 +211,8 @@ html, body{
         align-items: flex-end;
         gap: $gapxs;
         @include box($padding: 3% $paddingsm );
-        button{
+
+        i{
             @include button();
         }
 
@@ -175,6 +229,10 @@ html, body{
             align-items: flex-end;
             justify-content: space-between;
         }
+
+        i{
+            @include button($border: none, $background: rgba(68, 64, 60, 0.3));
+        }
     }
     
     .continueWatching{
@@ -184,6 +242,48 @@ html, body{
             @include rowitem();
             align-items: center;
             justify-content: center;
+            position: relative;
+
+            h6{
+                position: absolute;
+                bottom: 20px;
+                left: 10px;
+            }
+
+            .line{
+                height: 2px;
+                width: 90%;
+                position: absolute;
+                bottom: 10px;
+            }
+        }
+
+        .red{
+            .line{
+                background: linear-gradient(to right, $red 30%, $offwhite 10%);  
+            }
+        }
+
+        .extraction{
+            .line{
+                background: linear-gradient(to right, $red 60%, $offwhite 40%);  
+            }
+        }
+
+        .adam{
+            .line{
+                background: linear-gradient(to right, $red 20%, $offwhite 10%);  
+            }
+        }
+
+        .guard{
+            .line{
+                background: linear-gradient(to right, $red 70%, $offwhite 30%);  
+            }
+        }
+
+        i{
+            @include button($border: none, $background: rgba(68, 64, 60, 0.3));
         }
     }
 }
@@ -251,4 +351,8 @@ div{
 .guard{
     background-image: linear-gradient( rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9) ), url(./images/the-old-guard.jpeg);
     background-position: 50% 10%;
+}
+
+@media (max-width:1000){
+
 }

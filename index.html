@@ -9,17 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/64444e88c9.js" crossorigin="anonymous"></script>
+    <script defer src="./script.js"></script>
 </head>
 <body>
     <div class="customContainer flex">
         <div class="iconNav flex">
             <ul class="flex flex-col justify-between items-center">
                 <li><a href="#"><i class="fa-solid fa-circle-play"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-grip"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-tv"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-podcast"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-music"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="./pages/suggestions.html"><i class="fa-solid fa-grip"></i></a></li>
+                <li><a href="./pages/displays.html"><i class="fa-solid fa-tv"></i></a></li>
+                <li><a href="./pages/share.html"><i class="fa-solid fa-podcast"></i></a></li>
+                <li><a href="./pages/soundtracks.html"><i class="fa-solid fa-music"></i></a></li>
+                <li><a href="./pages/discover.html"><i class="fa-solid fa-magnifying-glass"></i></a></li>
             </ul>
         </div>
         <div class="main grow flex">
@@ -27,8 +28,8 @@
                 <h1 class="grow">Netflix</h1>
                 <ul class="flex flex-col grow">
                     <li><a href="#"><i class="fa-solid fa-circle-play"></i>Browse</a></li>
-                    <li><a href="#"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
-                    <li><a href="#"><i class="fa-solid fa-calendar"></i>Coming Soon</a></li>
+                    <li><a href="wishlist.html"><i class="fa-solid fa-heart"></i>Wishlist</a></li>
+                    <li><a href="upcoming.html"><i class="fa-solid fa-calendar"></i>Coming Soon</a></li>
                 </ul>
                 <div class="newTrailers flex flex-col">
                     <h2>New Trailers</h2>
@@ -62,8 +63,10 @@
                         <button class="notifications"><i class="fa-solid fa-bell"></i></button>
                         <div class="userInfo flex">
                             <i class="fa-solid fa-user"></i>
-                            <h6>Samantha G.</h6>
-                            <p>@Samantha</p>
+                            <div class="userName">
+                                <h6>Samantha G.</h6>
+                                <p>@Samantha</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,18 +97,24 @@
                     <h2>Continue Watching</h2>
                     <div class="continueWatching flex columns-4">
                         <div class="red customCard">
-                            <i class="fa-solid fa-play"></i>
+                            <h6>Red Notice</h6>
+                            <div class="line"></div>
+                            <i class="play fa-solid fa-play"></i>
                         </div>
                         <div class="extraction customCard">
-                            <i class="fa-solid fa-play"></i>
-
+                            <h6>Extraction</h6>
+                            <div class="line"></div>
+                            <i class="play fa-solid fa-play"></i>
                         </div>
                         <div class="adam customCard">
-                            <i class="fa-solid fa-play"></i>
-
+                            <h6>The Adam Project</h6>
+                            <div class="line"></div>
+                            <i class="play fa-solid fa-play"></i>
                         </div>
                         <div class="guard customCard">
-                            <i class="fa-solid fa-play"></i>
+                            <h6>The Old Guard</h6>
+                            <div class="line"></div>
+                            <i class="play fa-solid fa-play"></i>
                         </div>
                     </div>
                 </div>

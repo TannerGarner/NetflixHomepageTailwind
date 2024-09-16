@@ -546,11 +546,34 @@ video {
   justify-content: space-between;
 }
 
+.active {
+  color: rgb(228, 10, 20);
+}
+
 html, body {
   width: 100%;
   height: 100%;
   font-family: "Open Sans";
   color: rgb(233, 233, 233);
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: rgb(228, 10, 20);
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+a:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  background-color: rgba(77, 81, 76, 0.8);
 }
 
 .customContainer {
@@ -598,6 +621,7 @@ html, body {
   padding: 25px;
 }
 .sideNav ul {
+  padding: 5%;
   gap: 20px;
 }
 .sideNav ul i {
@@ -618,9 +642,25 @@ html, body {
   display: flex;
   border-radius: 15px;
   padding: 10px;
+  transition: 0.1s ease;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+.sideNav .newTrailers .customCard:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
+}
+.sideNav .newTrailers .customCard i {
+  border-radius: 25px;
+  border: none;
+  background-color: rgba(216, 204, 192, 0.3);
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.sideNav .newTrailers .customCard i:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 
 .topNav {
@@ -629,16 +669,22 @@ html, body {
   gap: 10%;
 }
 .topNav .search {
-  flex-grow: 1;
+  flex-grow: 2;
   gap: 10%;
 }
 .topNav .search .searchBar {
+  flex-grow: 1;
   gap: 10%;
   align-items: center;
   border-radius: 25px;
   border: 1px solid rgba(77, 81, 76, 0.8);
-  background-color: rgb(116, 116, 116);
-  padding: 10px 20px;
+  background-color: rgba(150, 150, 150, 0.2);
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.topNav .search .searchBar:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 .topNav .search .searchBar input {
   background-color: inherit;
@@ -648,18 +694,36 @@ html, body {
 .topNav .account {
   flex-grow: 1;
   justify-content: end;
+  gap: 10%;
 }
 .topNav .account button {
   border-radius: 25px;
   border: 1px solid rgba(77, 81, 76, 0.8);
   background-color: rgb(116, 116, 116);
-  padding: 10px 20px;
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.topNav .account button:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 .topNav .account .userInfo {
   border-radius: 25px;
   border: 1px solid rgba(77, 81, 76, 0.8);
   background-color: rgb(116, 116, 116);
-  padding: 10px 20px;
+  padding: 10px 15px;
+  transition: 0.1s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  width: 160px;
+}
+.topNav .account .userInfo:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
+}
+.topNav .account .userInfo p {
+  font-size: 10px;
 }
 
 .media {
@@ -678,17 +742,27 @@ html, body {
   border: 1px solid rgba(77, 81, 76, 0.8);
   padding: 3% 5%;
 }
-.media .peakyBlinders button {
+.media .peakyBlinders i {
   border-radius: 25px;
   border: 1px solid rgba(77, 81, 76, 0.8);
   background-color: rgb(116, 116, 116);
-  padding: 10px 20px;
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.media .peakyBlinders i:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 .media .peakyBlinders .watch {
   border-radius: 25px;
   border: 1px solid rgba(77, 81, 76, 0.8);
   background-color: rgb(228, 10, 20);
-  padding: 10px 20px;
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.media .peakyBlinders .watch:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 .media .popcornMania {
   flex-grow: 2;
@@ -700,8 +774,24 @@ html, body {
   display: flex;
   border-radius: 15px;
   padding: 10px;
+  transition: 0.1s ease;
   align-items: flex-end;
   justify-content: space-between;
+}
+.media .popcornMania .customCard:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
+}
+.media .popcornMania i {
+  border-radius: 25px;
+  border: none;
+  background-color: rgba(68, 64, 60, 0.3);
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.media .popcornMania i:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 .media .continueWatching {
   flex-grow: 1;
@@ -713,8 +803,48 @@ html, body {
   display: flex;
   border-radius: 15px;
   padding: 10px;
+  transition: 0.1s ease;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+.media .continueWatching .customCard:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
+}
+.media .continueWatching .customCard h6 {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.media .continueWatching .customCard .line {
+  height: 2px;
+  width: 90%;
+  position: absolute;
+  bottom: 10px;
+}
+.media .continueWatching .red .line {
+  background: linear-gradient(to right, rgb(228, 10, 20) 30%, rgb(233, 233, 233) 10%);
+}
+.media .continueWatching .extraction .line {
+  background: linear-gradient(to right, rgb(228, 10, 20) 60%, rgb(233, 233, 233) 40%);
+}
+.media .continueWatching .adam .line {
+  background: linear-gradient(to right, rgb(228, 10, 20) 20%, rgb(233, 233, 233) 10%);
+}
+.media .continueWatching .guard .line {
+  background: linear-gradient(to right, rgb(228, 10, 20) 70%, rgb(233, 233, 233) 30%);
+}
+.media .continueWatching i {
+  border-radius: 25px;
+  border: none;
+  background-color: rgba(68, 64, 60, 0.3);
+  padding: 10px 15px;
+  transition: 0.1s ease;
+}
+.media .continueWatching i:hover {
+  box-shadow: 0px 0px 15px 10px rgba(77, 81, 76, 0.8);
+  cursor: pointer;
 }
 
 div {
